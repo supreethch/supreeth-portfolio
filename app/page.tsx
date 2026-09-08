@@ -8,6 +8,7 @@ import {
   sitePath,
   stackGroups
 } from "./site-data";
+import TypedIntro from "./typewriter";
 
 function GitHubIcon() {
   return (
@@ -53,7 +54,7 @@ function ArrowIcon() {
 
 function ContactLink({ href, icon, children, external = false }: { href: string; icon: ReactNode; children: ReactNode; external?: boolean }) {
   return (
-    <a className="contact-link" href={href} {...(external ? { target: "_blank", rel: "noreferrer" } : {})}>
+    <a href={href} {...(external ? { target: "_blank", rel: "noreferrer" } : {})}>
       {icon}
       <span>{children}</span>
     </a>
@@ -100,19 +101,21 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <p className="eyebrow">Computer Science · University of Michigan</p>
-          <h1 id="hero-title">Supreeth Chittaluri</h1>
-          <p className="hero-lede">I build software for messy, real-world problems.</p>
-          <p className="hero-detail">Junior studying Computer Science at Michigan, interested in backend systems, full-stack products, and applied AI.</p>
-          <div className="contact-row">
+      <section className="hero-shell">
+        <div className="hero-content">
+          <TypedIntro />
+          <div className="contact-actions">
             <ContactLink href="mailto:supreetc@umich.edu" icon={<MailIcon />}>supreetc@umich.edu</ContactLink>
             <ContactLink href="https://www.linkedin.com/in/supreeth-chittaluri" icon={<LinkedInIcon />} external>LinkedIn</ContactLink>
             <ContactLink href="https://github.com/supreethch" icon={<GitHubIcon />} external>GitHub</ContactLink>
             <ContactLink href={sitePath("/resume.pdf")} icon={<DocumentIcon />} external>Résumé</ContactLink>
           </div>
-          <a className="scroll-cue" href="#experience">Explore the portfolio <span aria-hidden="true">↓</span></a>
+          <nav className="hero-explore" aria-label="Explore the portfolio">
+            <span>Explore the portfolio</span>
+            <div>
+              {navItems.map((item) => <a href={item.href} key={item.label}>{item.label}</a>)}
+            </div>
+          </nav>
         </div>
       </section>
 
@@ -176,79 +179,97 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="anchor-section section-shell" id="stack" aria-labelledby="stack-heading">
-        <SectionHeading number="03" label="Stack" title="Tools I use" id="stack-heading" />
-        <div className="stack-grid">
+      <section className="anchor-section" id="stack" aria-labelledby="stack-heading">
+        <div className="page-intro in-page-intro">
+          <p className="eyebrow">03 · Stack</p>
+          <h1 id="stack-heading">Skills</h1>
+          <p>Technologies used across projects, coursework, and experience.</p>
+        </div>
+        <div className="content-shell stack-directory" aria-label="Technology groups">
           {stackGroups.map((group) => (
-            <article className="stack-card" key={group.name}>
-              <h3>{group.name}</h3>
-              <div className="skill-list">
+            <article className="stack-group" key={group.name}>
+              <h2>{group.name}</h2>
+              <div className="skill-logo-row">
                 {group.skills.map((skill) => (
-                  <figure className="skill" key={skill.name}>
+                  <figure className="skill-logo" key={skill.name}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <span className="skill-icon"><img src={skill.icon} alt="" width="32" height="32" loading="lazy" /></span>
+                    <img src={skill.icon} alt="" width="46" height="46" loading="lazy" />
                     <figcaption>{skill.name}</figcaption>
                   </figure>
                 ))}
               </div>
+              <p className="stack-text">
+                {group.skills.map((skill) => skill.name).join(" · ")}
+                {"extra" in group && group.extra ? ` · ${group.extra}` : ""}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="anchor-section section-shell about-section" id="about" aria-labelledby="about-heading">
-        <SectionHeading number="04" label="About me" title="A little more context" id="about-heading" />
+      <section className="anchor-section" id="about" aria-labelledby="about-heading">
+        <div className="about-page-intro">
+          <p className="eyebrow" id="about-heading">04 · About Me</p>
+        </div>
 
-        <div className="about-profile">
-          <div className="headshot-frame">
+        <section className="content-shell about-education" aria-labelledby="education-heading">
+          <p className="eyebrow education-section-label" id="education-heading">Education</p>
+          <article className="education-card">
+            <div className="education-main">
+              <div>
+                <p className="eyebrow">Ann Arbor, Michigan</p>
+                <h2>University of Michigan</h2>
+                <div className="education-degree-row">
+                  <p className="education-degree">Bachelor of Science in Engineering in Computer Science (B.S.E. C.S.)</p>
+                  <p className="education-standing">Junior</p>
+                </div>
+              </div>
+            </div>
+            <div className="coursework coursework-visible">
+              <p className="coursework-title">Relevant coursework</p>
+              <div className="course-grid">
+                {education.map((course) => (
+                  <p key={course.code}><strong>{course.code}</strong><span>{course.title}</span></p>
+                ))}
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section className="content-shell about-profile" aria-label="Introduction">
+          <div className="about-headshot-frame">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={sitePath("/about/headshot.webp")} alt="Supreeth Chittaluri" loading="lazy" />
+            <img className="about-headshot" src={sitePath("/about/headshot.webp")} alt="Supreeth Chittaluri" loading="lazy" />
           </div>
-          <div className="about-copy">
-            <p className="eyebrow">Who I am</p>
-            <p>
-              I’m a junior at the University of Michigan studying Computer Science. I’m interested in software engineering and applied AI, especially when algorithms and data have to become something people can actually use.
-            </p>
-            <p>
-              My work ranges from real-time transit routing and recommendation systems to forecasting tools at OneStream. I like working across the whole system, from the model or backend service to testing, performance, and the final interface.
-            </p>
+          <div className="about-profile-copy">
+            <p className="eyebrow">Supreeth Chittaluri</p>
+            <div className="about-introduction">
+              <p>
+                I am a junior at the University of Michigan studying Computer Science, with a focus on software engineering and applied AI. I am drawn to problems where algorithms, data, and product decisions all matter, especially when the result can make something complicated easier to understand or use.
+              </p>
+              <p>
+                That interest shapes the work I choose. I built a2transit to connect Ann Arbor’s two bus systems in one route search, Pulse to separate meaningful market activity from background noise, and Undrift to make skill growth visible through real development history. Alongside my experience building AI and production software at OneStream, these projects have taught me to work across the full product, measure whether an idea actually works, and stay with difficult technical problems until I understand them.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div className="subsection-heading">
-          <p className="eyebrow">Education</p>
-          <h3>University of Michigan</h3>
-        </div>
-        <article className="education-card">
-          <div className="education-summary">
-            <p>College of Engineering · Ann Arbor, Michigan</p>
-            <h4>Bachelor of Science in Engineering in Computer Science</h4>
-            <span>Junior</span>
-          </div>
-          <div className="course-grid" aria-label="Relevant coursework">
-            {education.map((course) => (
-              <p key={course.code}><strong>{course.code}</strong><span>{course.title}</span></p>
-            ))}
-          </div>
-        </article>
-
-        <div className="subsection-heading life-heading">
-          <p className="eyebrow">Life outside software</p>
-          <h3>Friends, food, sports, travel, and music.</h3>
-        </div>
-        <div className="life-grid">
+        <section className="content-shell off-clock-heading" aria-labelledby="off-clock-heading">
+          <h2 className="eyebrow" id="off-clock-heading">Life outside software</h2>
+        </section>
+        <section className="about-collage" aria-label="Personal photo collage">
           {aboutStories.map((story) => (
-            <figure className="life-card" key={story.id}>
-              <div className={`life-photos life-photos-${story.files.length}`}>
+            <figure className={`about-story about-story-${story.id}`} key={story.id}>
+              <div className={`about-photos about-photos-${story.files.length}`}>
                 {story.files.map((file, index) => (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={sitePath(`/about/${file}`)} alt={story.alts[index]} loading="lazy" key={file} />
+                  <img className="about-photo" src={sitePath(`/about/${file}`)} alt={story.alts[index]} loading="lazy" key={file} />
                 ))}
               </div>
               <figcaption>{story.caption}</figcaption>
             </figure>
           ))}
-        </div>
+        </section>
       </section>
 
       <footer className="site-footer">

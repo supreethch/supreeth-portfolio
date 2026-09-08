@@ -134,39 +134,46 @@ export const stackGroups = [
     { name: "HTML", icon: icon("html5/html5-original.svg") },
     { name: "CSS", icon: icon("css3/css3-original.svg") }
   ] },
-  { name: "Backend and data", skills: [
+  { name: "Backend and APIs", skills: [
     { name: "FastAPI", icon: icon("fastapi/fastapi-original.svg") },
     { name: "Node.js", icon: icon("nodejs/nodejs-original.svg") },
+    { name: "Express", icon: icon("express/express-original.svg") }
+  ], extra: "REST APIs · Server Sent Events · WebSockets" },
+  { name: "Data and Storage", skills: [
     { name: "PostgreSQL", icon: icon("postgresql/postgresql-original.svg") },
-    { name: "Redis", icon: icon("redis/redis-original.svg") }
-  ] },
-  { name: "ML and analysis", skills: [
-    { name: "PyTorch", icon: icon("pytorch/pytorch-original.svg") },
-    { name: "TensorFlow", icon: icon("tensorflow/tensorflow-original.svg") },
+    { name: "Redis", icon: icon("redis/redis-original.svg") },
+    { name: "SQLite", icon: icon("sqlite/sqlite-original.svg") },
     { name: "Pandas", icon: icon("pandas/pandas-original.svg") },
     { name: "NumPy", icon: icon("numpy/numpy-original.svg") }
-  ] },
-  { name: "Infrastructure", skills: [
+  ], extra: "PostGIS · Supabase · SQLAlchemy" },
+  { name: "Machine Learning", skills: [
+    { name: "PyTorch", icon: icon("pytorch/pytorch-original.svg") },
+    { name: "TensorFlow", icon: icon("tensorflow/tensorflow-original.svg") }
+  ], extra: "Gemini · Applied AI · Statistical detection" },
+  { name: "Infrastructure and Tools", skills: [
     { name: "Docker", icon: icon("docker/docker-original.svg") },
     { name: "AWS", icon: icon("amazonwebservices/amazonwebservices-original-wordmark.svg") },
     { name: "Google Cloud", icon: icon("googlecloud/googlecloud-original.svg") },
-    { name: "Git", icon: icon("git/git-original.svg") }
+    { name: "Git", icon: icon("git/git-original.svg") },
+    { name: "GitHub", icon: icon("github/github-original.svg") },
+    { name: "CMake", icon: icon("cmake/cmake-original.svg") },
+    { name: "Linux", icon: icon("linux/linux-original.svg") }
   ] }
 ];
 
 export const education = [
   { code: "EECS 201", title: "Computer Science Pragmatics" },
   { code: "EECS 203", title: "Discrete Mathematics" },
-  { code: "EECS 280", title: "Programming and Data Structures" },
+  { code: "EECS 280", title: "Programming and Introductory Data Structures" },
   { code: "EECS 281", title: "Data Structures and Algorithms" },
-  { code: "EECS 370", title: "Computer Organization" },
+  { code: "EECS 370", title: "Introduction to Computer Organization" },
   { code: "EECS 376", title: "Foundations of Computer Science" },
-  { code: "EECS 482", title: "Operating Systems" },
+  { code: "EECS 482", title: "Introduction to Operating Systems" },
   { code: "EECS 484", title: "Database Management Systems" },
   { code: "EECS 485", title: "Web Systems" },
-  { code: "EECS 491", title: "Distributed Systems" },
+  { code: "EECS 491", title: "Introduction to Distributed Systems" },
   { code: "EECS 493", title: "User Interface Development" },
-  { code: "EECS 497", title: "Human-Centered Software Design" },
+  { code: "EECS 497", title: "Human Centered Software Design and Development" },
   { code: "EECS 498-016", title: "Applied Agentic Software Engineering" },
   { code: "ROB 102", title: "Introduction to AI Programming" },
   { code: "MATH 214", title: "Applied Linear Algebra" },
@@ -174,10 +181,10 @@ export const education = [
 ];
 
 export const aboutStories = [
-  { id: "friends", files: ["friends-1.webp", "friends-2.webp"], alts: ["Supreeth at an amusement park with friends", "Supreeth and friends together in the city at night"], caption: "Always love hanging out with my friends." },
-  { id: "pizza", files: ["pizza.webp"], alts: ["Pizza at L’Industrie Pizzeria in New York City"], caption: "Always chasing the next great meal. This one was at L’Industrie in NYC." },
-  { id: "basketball", files: ["basketball.webp"], alts: ["An outdoor basketball hoop under the evening sky"], caption: "Play basketball often." },
-  { id: "travel", files: ["la-sunset-1.webp", "la-sunset-2.webp"], alts: ["An orange sunset over the Pacific Ocean in Los Angeles", "A sunset over the hills of Los Angeles"], caption: "Sunsets from Los Angeles." },
-  { id: "big-house", files: ["big-house.webp"], alts: ["Michigan football from the front row at the Big House"], caption: "Love catching games at the Big House." },
-  { id: "concert", files: ["concert.webp"], alts: ["A concert arena filled with orange lights"], caption: "Big fan of live music." }
+  { id: "friends", files: ["friends-1.webp", "friends-2.webp"], alts: ["Supreeth at an amusement park with friends", "Supreeth and friends together in the city at night"], caption: "Always love hanging out with my friends" },
+  { id: "pizza", files: ["pizza.webp"], alts: ["Pizza at L’Industrie Pizzeria in New York City"], caption: "Always chasing the next great meal, this one’s at L’Industrie Pizzeria in NYC" },
+  { id: "basketball", files: ["basketball.webp"], alts: ["An outdoor basketball hoop under the evening sky"], caption: "Play basketball often" },
+  { id: "travel", files: ["la-sunset-1.webp", "la-sunset-2.webp"], alts: ["An orange sunset over the Pacific Ocean in Los Angeles", "A sunset over the hills of Los Angeles"], caption: "Love traveling, these are some sunsets from LA, California" },
+  { id: "big-house", files: ["big-house.webp"], alts: ["Michigan football from the front row at the Big House"], caption: "Love catching games at the Big House" },
+  { id: "concert", files: ["concert.webp"], alts: ["A concert arena filled with orange lights"], caption: "Big fan of live music" }
 ];
