@@ -150,6 +150,8 @@ export const projects: Project[] = [
       "CommonGround builds one shared playlist for a group of listeners and ranks it on the person it is serving worst, not on the group average. Every track carries a one-line reason generated from the same math that ranked it, and the room re-ranks live as people vote.",
     why:
       "The usual way to recommend for a group is to average everyone's taste, which reliably produces the playlist nobody chose and hides who it failed. Average a metalhead and a jazz fan and you get neither. CommonGround optimizes the floor instead: it reports how satisfied the least-served member is, names them, and lets the group watch the tradeoff move as they switch ranking modes.",
+    image: "/projects/commonground.png",
+    imageAlt: "A CommonGround room showing the ranking mode selector and a per-member satisfaction panel with the least-served listener highlighted",
     stack: ["Python", "scikit-learn", "NumPy", "FastAPI", "PostgreSQL", "WebSockets", "React", "TypeScript"],
     live: "https://commonground-alpha.vercel.app",
     github: "https://github.com/supreethch/commonground",
