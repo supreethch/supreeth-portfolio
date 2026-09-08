@@ -3,10 +3,11 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const sitePath = (path: string) => `${basePath}${path}`;
 
 export const navItems = [
-  { label: "Experience", href: "#experience" },
+  { label: "Experiences", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Stack", href: "#stack" },
-  { label: "About", href: "#about" }
+  { label: "Skills", href: "#stack" },
+  { label: "Education", href: "#education" },
+  { label: "About Me", href: "#about" }
 ];
 
 export const experiences = [

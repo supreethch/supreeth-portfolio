@@ -61,13 +61,10 @@ function ContactLink({ href, icon, children, external = false }: { href: string;
   );
 }
 
-function SectionHeading({ number, label, title, id }: { number: string; label: string; title: string; id: string }) {
+function SectionHeading({ title, id }: { title: string; id: string }) {
   return (
     <div className="section-heading">
-      <p className="eyebrow">{number} · {label}</p>
-      <div className="section-heading-row">
-        <h2 id={id}>{title}</h2>
-      </div>
+      <h2 id={id}>{title}</h2>
     </div>
   );
 }
@@ -120,7 +117,7 @@ export default function Home() {
       </section>
 
       <section className="anchor-section section-shell" id="experience" aria-labelledby="experience-heading">
-        <SectionHeading number="01" label="Timeline" title="Experience" id="experience-heading" />
+        <SectionHeading title="Experiences" id="experience-heading" />
         <div className="experience-grid">
           {experiences.map((experience, index) => (
             <article className="experience-card" key={experience.company}>
@@ -141,7 +138,7 @@ export default function Home() {
       </section>
 
       <section className="anchor-section section-shell" id="projects" aria-labelledby="projects-heading">
-        <SectionHeading number="02" label="Passion work" title="Projects" id="projects-heading" />
+        <SectionHeading title="Projects" id="projects-heading" />
         <div className="project-grid">
           {projects.map((project, index) => (
             <article className={`project-card${project.image ? "" : " project-card-text"}`} key={project.title}>
@@ -179,12 +176,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="anchor-section" id="stack" aria-labelledby="stack-heading">
-        <div className="page-intro in-page-intro">
-          <p className="eyebrow">03 · Stack</p>
-          <h1 id="stack-heading">Skills</h1>
-          <p>Technologies used across projects, coursework, and experience.</p>
-        </div>
+      <section className="anchor-section standalone-section" id="stack" aria-labelledby="stack-heading">
+        <SectionHeading title="Skills" id="stack-heading" />
         <div className="content-shell stack-directory" aria-label="Technology groups">
           {stackGroups.map((group) => (
             <article className="stack-group" key={group.name}>
@@ -207,17 +200,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="anchor-section" id="about" aria-labelledby="about-heading">
-        <div className="about-page-intro">
-          <p className="eyebrow" id="about-heading">04 · About Me</p>
-        </div>
-
-        <section className="content-shell about-education" aria-labelledby="education-heading">
-          <p className="eyebrow education-section-label" id="education-heading">Education</p>
+      <section className="anchor-section standalone-section" id="education" aria-labelledby="education-heading">
+        <SectionHeading title="Education" id="education-heading" />
+        <div className="content-shell education-section">
           <article className="education-card">
             <div className="education-main">
               <div>
-                <p className="eyebrow">Ann Arbor, Michigan</p>
+                <p className="education-location">Ann Arbor, Michigan</p>
                 <h2>University of Michigan</h2>
                 <div className="education-degree-row">
                   <p className="education-degree">Bachelor of Science in Engineering in Computer Science (B.S.E. C.S.)</p>
@@ -234,15 +223,17 @@ export default function Home() {
               </div>
             </div>
           </article>
-        </section>
+        </div>
+      </section>
 
+      <section className="anchor-section standalone-section" id="about" aria-labelledby="about-heading">
+        <SectionHeading title="About Me" id="about-heading" />
         <section className="content-shell about-profile" aria-label="Introduction">
           <div className="about-headshot-frame">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="about-headshot" src={sitePath("/about/headshot.webp")} alt="Supreeth Chittaluri" loading="lazy" />
           </div>
           <div className="about-profile-copy">
-            <p className="eyebrow">Supreeth Chittaluri</p>
             <div className="about-introduction">
               <p>
                 I am a junior at the University of Michigan studying Computer Science, with a focus on software engineering and applied AI. I am drawn to problems where algorithms, data, and product decisions all matter, especially when the result can make something complicated easier to understand or use.
@@ -255,7 +246,7 @@ export default function Home() {
         </section>
 
         <section className="content-shell off-clock-heading" aria-labelledby="off-clock-heading">
-          <h2 className="eyebrow" id="off-clock-heading">Life outside software</h2>
+          <h2 id="off-clock-heading">Life outside software</h2>
         </section>
         <section className="about-collage" aria-label="Personal photo collage">
           {aboutStories.map((story) => (

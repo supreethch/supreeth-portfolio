@@ -57,9 +57,9 @@ a {
 .project-stack {
   margin: 0;
   color: var(--accent-soft);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -342,19 +342,28 @@ a {
 }
 
 .section-heading {
-  margin-bottom: 3rem;
-}
-
-.section-heading-row {
-  margin-top: 0.8rem;
+  width: min(100% - 2rem, 1100px);
+  margin: 0 auto;
+  padding: 7rem 0 3.5rem;
+  text-align: center;
 }
 
 .section-heading h2 {
   margin: 0;
   font-family: "Libre Baskerville", Georgia, serif;
-  font-size: clamp(2.45rem, 5vw, 4.6rem);
-  letter-spacing: -0.045em;
-  line-height: 1.05;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.section-shell > .section-heading {
+  width: 100%;
+  padding: 0 0 3.5rem;
+}
+
+.standalone-section {
+  border-top: 1px solid var(--rule);
 }
 
 .experience-grid {
@@ -584,33 +593,6 @@ a {
   margin-inline: auto;
 }
 
-.page-intro {
-  width: min(100% - 2rem, 900px);
-  margin: 0 auto;
-  text-align: center;
-}
-
-.in-page-intro {
-  padding: 7rem 0 5.5rem;
-}
-
-.page-intro h1 {
-  margin: 0.7rem 0 0;
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-size: clamp(2.7rem, 7vw, 5.5rem);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.08;
-}
-
-.page-intro > p:last-child {
-  max-width: 680px;
-  margin: 1.4rem auto 0;
-  color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  line-height: 1.8;
-}
-
 .stack-directory {
   padding-bottom: 8rem;
   border-top: 1px solid var(--rule);
@@ -676,15 +658,19 @@ a {
   font-size: 0.86rem;
 }
 
-.about-page-intro {
-  width: min(100% - 2rem, 900px);
-  margin: 0 auto;
-  padding: 7rem 0 4rem;
-  text-align: center;
-}
-
 .education-card {
   overflow: hidden;
+}
+
+.education-section {
+  padding-bottom: 8rem;
+}
+
+.education-location {
+  margin: 0;
+  color: var(--accent-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
 }
 
 .education-main {
@@ -732,10 +718,8 @@ a {
   margin: 0;
   padding: 1.45rem 2.3rem 0.5rem;
   color: var(--accent-soft);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .course-grid {
@@ -757,21 +741,11 @@ a {
 
 .course-grid strong {
   color: var(--accent-soft);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
 }
 
 .course-grid span {
   color: var(--muted);
-}
-
-.about-education {
-  padding-bottom: 7rem;
-}
-
-.education-section-label {
-  margin-bottom: 1.25rem;
-  text-align: center;
 }
 
 .about-profile {
@@ -819,7 +793,8 @@ a {
 
 .off-clock-heading h2 {
   margin: 0;
-  font-weight: 400;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .about-collage {
@@ -933,11 +908,7 @@ a {
     padding: 5rem 0;
   }
 
-  .in-page-intro {
-    padding-top: 5rem;
-  }
-
-  .about-page-intro {
+  .section-heading {
     padding-top: 5rem;
   }
 
