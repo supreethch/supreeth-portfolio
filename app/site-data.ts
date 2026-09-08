@@ -38,26 +38,35 @@ export const education = [
 
 export const experiences = [
   {
-    role: "AI Product and Engineering Intern",
-    company: "OneStream Software",
-    location: "Birmingham, Michigan",
-    period: "Summer 2026",
-    summary: "Worked within AI and Operational Analytics on AI focused engineering and production software, contributing across product thinking, implementation, and developer workflows inside the Xperiflow platform.",
-    details: ["AI and Operational Analytics", "Production software", "Cross functional product work"]
+        role: "AI Product and Engineering Intern",
+        company: "OneStream Software",
+        location: "Birmingham, Michigan",
+        period: "Summer 2026",
+        summary: "Worked within AI and Operational Analytics on AI focused engineering and production software for the Xperiflow forecasting platform. Automated pre-forecast driver screening from a multi-day manual process to under two hours, saving roughly 2,000 consultant hours across more than 230 forecast consultants, and built a Python VAR-Lasso pipeline that ranks hundreds of candidate signals per forecast target. Raised true-driver recall from 2.2 percent to 90.3 percent at 100 percent precision on a deterministic ground-truth test suite, and exposed driver discovery as a tool the forecast agent calls over MCP.",
+        details: ["Driver screening cut from days to under two hours", "True-driver recall raised from 2.2 to 90.3 percent", "Driver discovery exposed as an MCP tool"]
   },
   {
-    role: "Software Engineering Intern",
-    company: "First Class Rentals",
-    location: "Chicago, Illinois",
-    summary: "Built pricing and operations tools for more than 20 rental units, combining booking data, demand forecasting, reporting automation, and practical decisions that helped increase revenue by 15 percent and occupancy from 90 percent to 95 percent.",
-    details: ["Python and SQL", "More than 100 booking records", "5 point occupancy increase"]
+        role: "Software Engineering Intern",
+        company: "HCL Global Systems",
+        location: "Farmington Hills, Michigan",
+        period: "Summer 2025",
+        summary: "Built and launched an internal recruiting platform that matched more than 10,000 consultant profiles to over 250 client requisitions, cutting median shortlisting time from 45 minutes to 8 for a team of 12 recruiters. Delivered a FastAPI ranking engine over PostgreSQL keyword search and pgvector semantic retrieval, plus a role-based React dashboard with PII safeguards, audit logging, and Dockerized CI/CD serving more than 1,000 recruiter searches a week at 99.9 percent uptime.",
+        details: ["Shortlisting time cut from 45 to 8 minutes", "FastAPI and pgvector ranking engine", "React dashboard at 99.9 percent uptime"]
   },
   {
-    role: "Data Analytics Intern",
-    company: "HCL Global Systems",
-    location: "Farmington Hills, Michigan",
-    summary: "Automated reporting across more than 450 employee records and built operational dashboards that improved compliance tracking by 30 percent while saving more than 10 hours of manual work each week.",
-    details: ["Python and Pandas", "More than 450 records", "30 percent compliance improvement"]
+        role: "Software Engineer Team Lead",
+        company: "Michigan Data Science Team",
+        location: "Ann Arbor, Michigan",
+        period: "2024 to 2025",
+        summary: "Led a seven-person team building a demand-forecasting system that projects US air travel two years out across 1,800 origin-destination markets covering 90 percent of passenger volume. Cut forecast error from 21 percent to 13 percent against a seasonal baseline and reached 82 percent directional accuracy with a LightGBM panel model over more than 40 indicators and leakage-safe pipelines.",
+        details: ["Led a seven-person engineering team", "Forecast error cut from 21 to 13 percent", "1,800 origin-destination markets"]
+  },
+  {
+        role: "Software Engineering Intern",
+        company: "First Class Rentals",
+        location: "Chicago, Illinois",
+        summary: "Built pricing and operations tools for more than 20 rental units, combining booking data, demand forecasting, reporting automation, and practical decisions that helped increase revenue by 15 percent and occupancy from 90 percent to 95 percent.",
+        details: ["Python and SQL", "More than 100 booking records", "5 point occupancy increase"]
   }
 ];
 
