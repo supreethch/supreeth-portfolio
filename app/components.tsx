@@ -117,7 +117,7 @@ export function ContactActions() {
   return (
     <div className="contact-actions">
       <a href="mailto:supreetc@umich.edu"><MailIcon />supreetc@umich.edu</a>
-      <a href="https://www.linkedin.com/in/supreeth-chittaluri-044a42276" target="_blank" rel="noreferrer"><LinkedInIcon />LinkedIn</a>
+      <a href="https://www.linkedin.com/in/supreeth-chittaluri" target="_blank" rel="noreferrer"><LinkedInIcon />LinkedIn</a>
       <a href="https://github.com/supreethch" target="_blank" rel="noreferrer"><GitHubIcon />GitHub</a>
       <a href={sitePath("/resume.pdf")} target="_blank" rel="noreferrer"><DocumentIcon />Résumé</a>
     </div>
