@@ -38,35 +38,39 @@ export const education = [
 
 export const experiences = [
   {
-        role: "AI Product and Engineering Intern",
-        company: "OneStream Software",
-        location: "Birmingham, Michigan",
-        period: "Summer 2026",
-        summary: "Worked within AI and Operational Analytics on AI focused engineering and production software for the Xperiflow forecasting platform. Automated pre-forecast driver screening from a multi-day manual process to under two hours, saving roughly 2,000 consultant hours across more than 230 forecast consultants, and built a Python VAR-Lasso pipeline that ranks hundreds of candidate signals per forecast target. Raised true-driver recall from 2.2 percent to 90.3 percent at 100 percent precision on a deterministic ground-truth test suite, and exposed driver discovery as a tool the forecast agent calls over MCP.",
-        details: ["Driver screening cut from days to under two hours", "True-driver recall raised from 2.2 to 90.3 percent", "Driver discovery exposed as an MCP tool"]
+    role: "AI Product and Engineering Intern",
+    company: "OneStream Software",
+    location: "Birmingham, Michigan",
+    period: "Summer 2026",
+    summary:
+      "I worked on the machine learning behind OneStream's Xperiflow forecasting platform, on the AI and Operational Analytics team. Consultants had been hand-picking the input signals for every forecast, days of work per engagement and easy to get wrong. I automated that step to under two hours and built the pipeline that ranks candidate signals per forecast target using per-target lag selection, LassoCV, and Granger tests. Rebuilding how the pipeline scored a signal's contribution took true-driver recall from 2.2 percent to 90.3 percent at full precision, measured against a suite of deterministic ground-truth tests I wrote. The ranked output now runs as a tool the forecasting agent calls directly over MCP.",
+    details: ["Screening automated: days to under two hours", "True-driver recall 2.2 to 90.3 percent", "Ranking pipeline exposed to the agent over MCP"]
   },
   {
-        role: "Software Engineering Intern",
-        company: "HCL Global Systems",
-        location: "Farmington Hills, Michigan",
-        period: "Summer 2025",
-        summary: "Built and launched an internal recruiting platform that matched more than 10,000 consultant profiles to over 250 client requisitions, cutting median shortlisting time from 45 minutes to 8 for a team of 12 recruiters. Delivered a FastAPI ranking engine over PostgreSQL keyword search and pgvector semantic retrieval, plus a role-based React dashboard with PII safeguards, audit logging, and Dockerized CI/CD serving more than 1,000 recruiter searches a week at 99.9 percent uptime.",
-        details: ["Shortlisting time cut from 45 to 8 minutes", "FastAPI and pgvector ranking engine", "React dashboard at 99.9 percent uptime"]
+    role: "Software Engineering Intern",
+    company: "HCL Global Systems",
+    location: "Farmington Hills, Michigan",
+    period: "Summer 2025",
+    summary:
+      "I built an internal recruiting platform end to end to replace a spreadsheet-based process for matching consultants to open client roles. Its core is a FastAPI ranking engine that blends PostgreSQL keyword search, pgvector semantic retrieval, and rule-based reranking; recruiters rated 86 percent of its top-five results relevant, and 95 percent of searches return in under 240 milliseconds. On top of it sits a role-based React dashboard with PII protection, audit logging, and a Dockerized CI/CD pipeline, now serving more than a thousand searches a week at 99.9 percent uptime. Median time to shortlist a role dropped from 45 minutes to 8.",
+    details: ["Time to shortlist: 45 to 8 minutes", "86 percent top-five relevance, sub-240 ms", "1,000+ searches a week at 99.9 percent uptime"]
   },
   {
-        role: "Software Engineer Team Lead",
-        company: "Michigan Data Science Team",
-        location: "Ann Arbor, Michigan",
-        period: "2024 to 2025",
-        summary: "Led a seven-person team building a demand-forecasting system that projects US air travel two years out across 1,800 origin-destination markets covering 90 percent of passenger volume. Cut forecast error from 21 percent to 13 percent against a seasonal baseline and reached 82 percent directional accuracy with a LightGBM panel model over more than 40 indicators and leakage-safe pipelines.",
-        details: ["Led a seven-person engineering team", "Forecast error cut from 21 to 13 percent", "1,800 origin-destination markets"]
+    role: "Software Engineer Team Lead",
+    company: "Michigan Data Science Team",
+    location: "Ann Arbor, Michigan",
+    period: "2024 to 2025",
+    summary:
+      "I led a team of seven building a system that forecasts United States air travel demand two years out, across 1,800 origin-destination markets that carry about 90 percent of national passenger volume. My work was the modeling core: a LightGBM panel model over 40-plus leakage-safe indicators with hierarchical reconciliation across the market tree. It cut forecast error from 21 percent to 13 percent against a seasonal baseline and reached 82 percent directional accuracy. Beyond the model, I set the team's technical direction and owned code review across the pipeline.",
+    details: ["Led a team of seven", "Forecast error 21 to 13 percent", "1,800 origin-destination markets"]
   },
   {
-        role: "Software Engineering Intern",
-        company: "First Class Rentals",
-        location: "Chicago, Illinois",
-        summary: "Built pricing and operations tools for more than 20 rental units, combining booking data, demand forecasting, reporting automation, and practical decisions that helped increase revenue by 15 percent and occupancy from 90 percent to 95 percent.",
-        details: ["Python and SQL", "More than 100 booking records", "5 point occupancy increase"]
+    role: "Software Engineering Intern",
+    company: "First Class Rentals",
+    location: "Chicago, Illinois",
+    summary:
+      "I built the pricing and operations tooling for a 20-unit short-term rental portfolio, turning booking history into demand forecasts and automating the weekly reporting that had been done by hand. Over the internship, revenue rose 15 percent and occupancy went from 90 percent to 95 percent.",
+    details: ["20-unit rental portfolio", "Revenue up 15 percent", "Occupancy 90 to 95 percent"]
   }
 ];
 
@@ -95,67 +99,105 @@ export const projects: Project[] = [
     slug: "a2transit",
     title: "a2transit",
     category: "Transit routing",
-    summary: "One trip planner for Ann Arbor's two bus networks",
-    description: "Combines TheRide and University of Michigan bus schedules, walking connections, service calendars, live vehicles, and delays into one door to door route search.",
-    why: "Ann Arbor riders move between two overlapping bus systems that expose separate maps, schedules, and service updates. For a Michigan student traveling between campus and the city, one trip can require several disconnected searches.",
+    summary: "One journey planner across Ann Arbor's two bus networks",
+    description:
+      "a2transit plans a single door-to-door trip across both of Ann Arbor's bus systems, the city's TheRide and the university's MBus. It routes you onto whichever buses are actually running, walks you between stops when a transfer needs it, and folds live vehicle positions and delays into every result.",
+    why:
+      "TheRide and MBus cover the same city and act like the other one does not exist. Neither trip planner will route across the other, even where their stops share a street corner, so the fastest way from campus to downtown is often a transfer that no app will suggest. I make that trip constantly, and I wanted one search that treated the two networks as the single system riders actually use.",
     image: "/projects/a2transit.webp",
     imageAlt: "a2transit planning a route across a live map of Ann Arbor",
     stack: ["Python", "FastAPI", "PostgreSQL", "PostGIS", "Redis", "React", "MapLibre", "GTFS"],
     live: "https://a2transit.vercel.app",
     github: "https://github.com/supreethch/a2transit",
     published: true,
-    challenge: "Adding walking connections exposed two subtle routing errors. One itinerary arrived at the correct time but reconstructed a destination two miles away. Another produced an impossible walk whose existence depended on iteration order.",
-    solution: "The final design separates ride, walk, and ready parent state, then runs walking relaxation from a stable snapshot of vehicle arrivals. Both routing engines consume the same walking graph and are compared against each other on real transit data.",
-    verification: "The router uses 8,308 walking links, including 1,456 connections between agencies. A timetable takes about 330 milliseconds to build, while a cached query completes in about 4 milliseconds.",
-    evidence: ["Two independent routing engines", "8,308 walking links", "About 4 millisecond cached queries", "Real service calendar testing"]
+    challenge:
+      "Routing runs on a cached RAPTOR engine over both feeds' timetables, but stitching in walking transfers broke it in two ways that only showed up on real data. One itinerary arrived on time yet left the rider two miles from the actual destination. Another invented a walking path that existed only because of the order rows came out of the database.",
+    solution:
+      "The fix was to keep ride state, walk state, and settled-parent state strictly separate, and to run every walking relaxation against a frozen snapshot of vehicle arrivals rather than a moving target. A second, slower Dijkstra engine runs the same queries against the same walking graph on every deploy, so any disagreement between the two is caught before it ships.",
+    verification:
+      "The walking graph carries 8,308 connections, 1,456 of them crossing between the two agencies, which are the transfers that make cross-network trips possible at all. Building a fresh timetable takes about 330 milliseconds; a warm query returns in about 4, roughly 19x faster than the Dijkstra engine it is checked against.",
+    evidence: ["RAPTOR and Dijkstra cross-checked on real data", "8,308 walking links across two agencies", "~4 ms warm queries, ~19x over Dijkstra", "378 tests, live GTFS-Realtime feeds"]
+  },
+  {
+    slug: "undrift",
+    title: "Undrift",
+    category: "Developer tools",
+    summary: "Scores which of your skills are still current, from your commit history",
+    description:
+      "Undrift reads your public commit history, asks Claude which skill each commit exercised, and scores every skill on three axes: how fresh it is, how much evidence backs it, and whether your use of it is rising or fading. Every score links back to the exact commits behind it, and it will tell you the date a skill goes stale if you stop touching it.",
+    why:
+      "A skills section is a list of claims with no dates and no evidence. \"Python, React, AWS, Docker\" says nothing about whether you have touched any of it this year, and the decay is invisible while it happens: you find out a skill has gone rusty in an interview, not before. Undrift makes that visible from data you are already generating.",
+    image: "/projects/undrift.webp",
+    imageAlt: "Undrift dashboard showing skill freshness, depth, momentum, and forecasts",
+    stack: ["Python", "FastAPI", "PostgreSQL", "React", "GitHub API", "GitHub Actions", "Claude"],
+    live: "https://undrift-supreeth-chittaluri.vercel.app",
+    github: "https://github.com/supreethch/undrift",
+    published: true,
+    challenge:
+      "The hard part is keeping the language model out of the decisions that have to be reproducible. If it could label the same work \"Python\", \"python3\", and \"Py\" on different commits, every decay curve built on top would be noise. If it decided what counted as stale, the scores could be argued out of any answer.",
+    solution:
+      "So the model does exactly one job: map each commit to one skill from a fixed 32-item vocabulary, enforced by the response schema itself. Everything after that is plain arithmetic: an exponential decay weighted by commit age, summed per skill, squashed onto a 0 to 100 scale. Classification is batched 25 commits per call, which cut a full run from about $1.70 on Opus to about $0.09 on Haiku with identical labels, and any failed call falls back to a deterministic tagger.",
+    verification:
+      "On a 302-commit test corpus, Haiku reproduced Opus's labels exactly at a twentieth of the cost. The resume auditor, where you paste in a skills line and it checks each claim against your commits, was tested against a job description carrying a prompt-injection payload: the injection was ignored and only the two real skills came back.",
+    evidence: ["Model constrained to a 32-skill enum", "Deterministic scoring, same answer every run", "302-commit run: $1.70 down to $0.09", "Prompt-injection tested and held"]
+  },
+  {
+    slug: "commonground",
+    title: "CommonGround",
+    category: "Group recommendation",
+    summary: "One playlist for a group, ranked on whoever it serves least",
+    description:
+      "CommonGround builds one shared playlist for a group of listeners and ranks it on the person it is serving worst, not on the group average. Every track carries a one-line reason generated from the same math that ranked it, and the room re-ranks live as people vote.",
+    why:
+      "The usual way to recommend for a group is to average everyone's taste, which reliably produces the playlist nobody chose and hides who it failed. Average a metalhead and a jazz fan and you get neither. CommonGround optimizes the floor instead: it reports how satisfied the least-served member is, names them, and lets the group watch the tradeoff move as they switch ranking modes.",
+    stack: ["Python", "scikit-learn", "NumPy", "FastAPI", "PostgreSQL", "WebSockets", "React", "TypeScript"],
+    live: "https://commonground-alpha.vercel.app",
+    github: "https://github.com/supreethch/commonground",
+    published: true,
+    challenge:
+      "A group ranker is easy to build and hard to trust. A hard veto that one unhappy listener can use to block a track has to be a real filter, not a penalty term, because any penalty large enough to stop nine-against-one would distort every other ranking too. And the fairness claims only mean something if they survive a dataset they were not tuned on.",
+    solution:
+      "The recommender is a hybrid of item-kNN and ALS collaborative filtering wrapped in a group ranker that scores a weighted mix of the group mean and the group minimum, then selects sequentially while weighing redundancy, artist repetition, and whose turn it is. Group metrics run as a paired bootstrap against an average-score baseline on two independent datasets. One early result that looked like a win was withdrawn after the second dataset reversed its sign.",
+    verification:
+      "Against a popularity baseline, the hybrid recommender hits 3.1x the top-10 precision while surfacing 69x more of the catalog. On group ranking, the fairness and repetition guarantees held on both datasets at no measurable cost to accuracy: veto violations and worst-artist share down, predicted floor up. Playlists build in about 16 milliseconds.",
+    evidence: ["3.1x precision, 69x catalog coverage over popularity", "Fairness gains held on two datasets", "Hard veto as a filter, not a penalty", "~16 ms playlists, 264 tests"]
   },
   {
     slug: "pulse",
     title: "Pulse",
     category: "Market intelligence",
-    summary: "Finds stock discussion spikes that are unusual for each ticker",
-    description: "Collects market conversations, identifies ticker mentions, scores sentiment, and compares each symbol with its own rolling baseline before surfacing a spike.",
-    why: "Popular stocks generate constant discussion, so raw mention counts confuse background noise with meaningful movement. Pulse measures each symbol against its own history and keeps the resulting signal available without charging the public.",
+    summary: "Flags stock chatter that is unusual for that specific ticker",
+    description:
+      "Pulse watches Reddit, Hacker News, and financial news RSS for stock mentions, scores the sentiment around each one, and compares every ticker against its own rolling history. It alerts only when the volume and the mood of a ticker both break from that ticker's normal, not from a global threshold.",
+    why:
+      "r/wallstreetbets mentions NVDA forty times an hour on a slow day. Most sentiment tools threshold on how positive a post reads, which buries the actual signal, a small-cap nobody discussed yesterday showing up forty times today, under the noise from names that are always loud. The question worth answering is not whether the mood is positive but whether it is unusual for this ticker.",
     image: "/projects/pulse.webp",
     imageAlt: "Pulse dashboard showing market sentiment and mention volume",
-    stack: ["TypeScript", "Node.js", "Express", "PostgreSQL", "React", "Gemini", "Server Sent Events"],
+    stack: ["TypeScript", "Node.js", "Express", "PostgreSQL", "React", "Gemini", "Server-Sent Events"],
     live: "https://pulse-b8zd.onrender.com",
     github: "https://github.com/supreethch/pulse",
     published: true,
-    challenge: "The ingestion queue survived restarts, but useful signals still depended on someone pressing a button. Old posts could accumulate safely while the public product quietly became stale.",
-    solution: "The final pipeline performs free local ticker filtering before Gemini, persists that decision, schedules scoring every 30 minutes, and coordinates manual and automatic work through one database lock. Every model call, including retries, reserves space under the same daily request budget.",
-    verification: "Pulse filters about 45 percent of ingested posts before the model, operates at no ongoing cost, and records source publication time so an older queued post never appears to be fresh news.",
-    evidence: ["262 passing tests", "45 percent filtered before Gemini", "400 request daily ceiling", "No ongoing operating cost"]
-  },
-  {
-    slug: "undrift",
-    title: "Undrift",
-    category: "Developer analytics",
-    summary: "Turns coding history into an evidence backed view of skill freshness",
-    description: "Classifies public GitHub activity and translates it into explainable freshness, depth, momentum, and skill decay forecasts.",
-    why: "A résumé records what someone has learned, but it cannot show what has been practiced recently or which skills may deserve attention next. Undrift turns public development history into a more current and explainable view.",
-    image: "/projects/undrift.webp",
-    imageAlt: "Undrift dashboard showing skill freshness, depth, momentum, and forecasts",
-    stack: ["Python", "FastAPI", "PostgreSQL", "React", "GitHub API", "Claude"],
-    live: "https://undrift-supreeth-chittaluri.vercel.app",
-    github: "https://github.com/supreethch/undrift",
-    published: true,
-    challenge: "A single freshness score treated a deeply established skill that had gone quiet like a technology touched twice last week. The same number could demand opposite advice.",
-    solution: "The scoring model separates freshness, depth, and momentum. Thin evidence produces no momentum claim, and the forecast solves directly for when a skill will cross a freshness threshold.",
-    verification: "The evidence view links every score back to the commits that produced it. Batching later reduced classification cost for 302 commits from $1.70 to $0.09 while preserving a deterministic fallback.",
-    evidence: ["Three independent scoring axes", "Evidence linked to commits", "302 commit classification run", "Classification cost reduced to $0.09"]
+    challenge:
+      "Every design decision was really a spend decision. Sending every post to a language model to check for a ticker would cost a fortune and mostly return nothing. And a signal that only refreshes when a visitor clicks a button quietly goes stale while old posts pile up safely in the queue.",
+    solution:
+      "A regex plus the SEC's official symbol list proposes ticker candidates before any model call, so nearly half of all ingested posts are resolved for free. Volume and sentiment are scored as separate z-scores, and only a volume surge that also moves the mood earns an alert, since a spike with flat sentiment is usually a scheduled news cycle. Scoring runs every 30 minutes, coordinated with manual runs through a single database lock, and every model call, retries included, reserves budget against one rolling daily ceiling.",
+    verification:
+      "The prefilter drops about 45 percent of ingested posts before they reach Gemini. The z-score detector runs at a 0.05 to 0.20 percent false-positive rate on 3x volume spikes. Every post stores its source publication time, so a stale item pulled off the queue can never be shown as breaking news, and the whole system runs at no ongoing cost.",
+    evidence: ["45 percent of posts resolved before the model", "0.05 to 0.20 percent false-positive rate", "Per-ticker baselines, not global thresholds", "262 tests, four independent spend brakes"]
   },
   {
     slug: "miniredis",
     title: "MiniRedis",
     category: "Systems engineering",
-    summary: "A Redis style server built to understand concurrency from the inside",
-    description: "Serves concurrent TCP clients with expiration, LRU eviction, append only persistence, and six familiar Redis commands.",
-    why: "I am building MiniRedis because reading about caches and locks is different from designing one, breaking it under load, and measuring the result.",
-    stack: ["C++20", "TCP and IP", "Multithreading", "CMake"],
+    summary: "A Redis-style server built to learn concurrency by breaking it",
+    description:
+      "A Redis-style server that handles concurrent TCP clients with key expiration, LRU eviction, append-only persistence, and six of the core Redis commands.",
+    why:
+      "Reading about reader-writer locks and cache eviction is not the same as designing them, running them under load, and watching where they fail. MiniRedis is the version where I own every line.",
+    stack: ["C++20", "TCP/IP", "Multithreading", "CMake"],
     status: "Coming soon",
     published: false,
-    evidence: ["Concurrent TCP clients", "Reader and writer locks", "Expiration and eviction", "Append only persistence"]
+    evidence: ["Concurrent TCP clients", "Reader-writer locks", "Expiration and LRU eviction", "Append-only persistence"]
   }
 ];
 
